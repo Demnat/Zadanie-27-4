@@ -34,7 +34,7 @@ function comments(state = [], action) {
         case THUMB_DOWN_COMMENT:
             return [{
                     id: action.id,
-                    // text: action.text,
+                    text: state.comments.find(comment => comment.id === action.id).text,
                     votes: action.amount--
                 }
                 , ...state.comments];
